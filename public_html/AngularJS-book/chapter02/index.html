@@ -1,19 +1,22 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app='myApp'>
     <head>
         <title>AngularJS - Chapter 2</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
         <script type="text/javascript" src="../lib/angular.js"></script>
         <script>
-            var messages = {};
-            messages.someText = 'You have started your journey';
-            function TextController($scope) {
-                $scope.messages = messages;
-            }
+            var myAppModule = angular.module('myApp', []);
+            
+            myAppModule.controller('TextController',
+            function($scope) {
+                var someText = {};
+                someText.message = 'You have started your journey';
+                $scope.someText = someText;
+            });
         </script>
     </head>
-    <body ng-controller="TextController">
-        <p>{{messages.someText}}</p>
+    <body ng-controller='TextController'>
+        <p>{{someText.message}}</p>
     </body>
 </html>
