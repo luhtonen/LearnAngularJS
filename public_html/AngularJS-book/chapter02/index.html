@@ -5,17 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
         <script type="text/javascript" src="../lib/angular.js"></script>
-        <script>
-            var myAppModule = angular.module('myApp', []);
-            
-            myAppModule.controller('TextController',
-            function($scope) {
-                var someText = {};
-                someText.message = 'You have started your journey';
-                $scope.someText = someText;
-                $scope.greeting = 'Hi there';
-            });
-        </script>
+        <script type='text/javascript' src="js/chapter02.js"></script>
     </head>
     <body ng-controller='TextController'>
         <p>{{someText.message}}</p>
