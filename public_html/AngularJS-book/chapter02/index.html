@@ -13,10 +13,14 @@
                 var someText = {};
                 someText.message = 'You have started your journey';
                 $scope.someText = someText;
+                $scope.greeting = 'Hi there';
             });
         </script>
     </head>
     <body ng-controller='TextController'>
         <p>{{someText.message}}</p>
+        <p>Curly braces: <span>{{greeting}}</span></p>
+        <p>Tag attribute: <span ng-bind="greeting"></span></p>
+        <p></p>
     </body>
 </html>
