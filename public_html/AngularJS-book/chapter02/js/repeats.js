@@ -6,4 +6,8 @@ var students = [{name:'Mary Contrary', id:'1'},
             
 repeatsAppModule.controller('StudentListController', function($scope) {
     $scope.students = students;
+    
+    $scope.insertTom = function() {
+        $scope.students.splice(1, 0, {name: 'Tom Thumb', id: '4'});
+    };
 });

@@ -11,10 +11,13 @@
     </head>
     <body>
         <h4>List of Students</h4>
-        <ul ng-controller="StudentListController">
+        <div ng-controller="StudentListController">
+        <ul>
             <li ng-repeat="student in students">
                 <a href="/student/view/{{student.id}}">{{student.name}}</a>
             </li>
         </ul>
+        <button ng-click="insertTom()">Insert</button>
+        </div>
     </body>
 </html>
