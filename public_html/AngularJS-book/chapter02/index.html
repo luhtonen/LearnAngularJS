@@ -4,13 +4,27 @@
         <title>AngularJS - Chapter 2</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
-        <script type="text/javascript" src="../lib/angular.js"></script>
+        <link rel="stylesheet" type="text/css" href="../../lib/css/bootstrap.css" />
+        <link rel='stylesheet' type="text/css" href='css/chapter02.css'/>
+        <script type="text/javascript" src="../../lib/js/angular.js"></script>
         <script type='text/javascript' src="js/chapter02.js"></script>
     </head>
-    <body ng-controller='TextController'>
-        <p>{{someText.message}}</p>
-        <p>Curly braces: <span>{{greeting}}</span></p>
-        <p>Tag attribute: <span ng-bind="greeting"></span></p>
-        <p></p>
+    <body> 
+        <div ng-controller='TextController'>
+            <h4>TextController</h4>
+            <p>{{someText.message}}</p>
+            <p>Curly braces: <span>{{greeting}}</span></p>
+            <p>Tag attribute: <span ng-bind="greeting"></span></p>
+        </div>
+        <h4>SomeController</h4>
+        <form ng-controller="SomeController">
+            You checked it: <input type='checkbox' ng-model="youCheckedIt">
+        </form>
+        <h4>StartUpController</h4>
+        <form ng-controller="StartUpController">
+            Starting: <input ng-change="computeNeeded()"
+                             ng-model='funding.startingEstimate'><br/>
+            Recommended: {{funding.needed}}
+        </form>
     </body>
 </html>
