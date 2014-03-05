@@ -29,7 +29,8 @@
         <form ng-submit="requestFunding()" ng-controller="AnotherStartUpController">
             Starting: <input ng-change="anotherComputeNeeded()" ng-model="anotherStartingEstimate"><br/>
             Recommendation: {{anotherNeeded}}<br/>
-            <button>Fund my startup!</button>
+            <button>Fund my startup!</button> 
+            <button ng-click="reset()">Reset</button>
         </form>
     </body>
 </html>
