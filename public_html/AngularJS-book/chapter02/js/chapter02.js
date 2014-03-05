@@ -18,4 +18,12 @@ function($scope) {
     };
     
     $scope.$watch('funding.startingEstimate', computeNeeded);
+})
+.controller('AnotherStartUpController', function($scope) {
+    $scope.anotherComputeNeeded = function() {
+        $scope.anotherNeeded = $scope.anotherStartingEstimate * 10;
+    };
+    $scope.requestFunding = function() {
+        window.alert("Sorry, please get more customers first.");
+    };
 });

@@ -25,5 +25,11 @@
             Starting: <input ng-model='funding.startingEstimate'><br/>
             Recommended: {{funding.needed}}
         </form>
+        <h4>AnotherStartUpController</h4>
+        <form ng-submit="requestFunding()" ng-controller="AnotherStartUpController">
+            Starting: <input ng-change="anotherComputeNeeded()" ng-model="anotherStartingEstimate"><br/>
+            Recommendation: {{anotherNeeded}}<br/>
+            <button>Fund my startup!</button>
+        </form>
     </body>
 </html>
