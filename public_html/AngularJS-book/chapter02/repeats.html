@@ -21,7 +21,7 @@
         </div>
         <h4>Albums</h4>
         <table ng-controller="AlbumController">
-            <tr ng-repeat="track in album">
+            <tr ng-class="{firstRow: $first, lastRow: $last}" ng-repeat="track in album">
                 <td>{{$index + 1}}</td>
                 <td>{{track.name}}</td>
                 <td>{{track.duration}}</td>
