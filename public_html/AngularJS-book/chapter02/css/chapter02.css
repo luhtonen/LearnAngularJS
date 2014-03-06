@@ -4,3 +4,6 @@ body {
 h4 {
     padding-top: 10px;
 }
+td {
+    padding: 1px 5px;
+}
