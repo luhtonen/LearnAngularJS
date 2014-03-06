@@ -19,6 +19,7 @@
         </ul>
         <button ng-click="insertTom()">Insert</button>
         </div>
+        
         <h4>Albums</h4>
         <table ng-controller="AlbumController">
             <tr ng-class="{firstRow: $first, lastRow: $last}" ng-repeat="track in album">
@@ -27,5 +28,17 @@
                 <td>{{track.duration}}</td>
             </tr>
         </table>
+        
+        <h4>Death Ray Control</h4>
+        <div ng-controller="DeathrayMenuController">
+            <button ng-click='toggleMenu()'>Toggle Menu</button>
+            <ul class='deathRayMenu' ng-show='menuState.show'>
+                <li ng-click='stun()'>Stun</li>
+                <li ng-click='disintegrate()'>Disintegrate</li>
+                <li ng-click='erase()'>Erase from history</li>
+            </ul>
+            <div>Action executed: {{actionResult}}</div>
+        </div>
+
     </body>
 </html>

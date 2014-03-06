@@ -13,3 +13,8 @@ td {
 .firstRow {
     background-color: cyan
 }
+.deathRayMenu li {
+    margin: 3px;
+    list-style: none;
+    cursor: pointer;
+}
