@@ -33,12 +33,28 @@
         <div ng-controller="DeathrayMenuController">
             <button ng-click='toggleMenu()'>Toggle Menu</button>
             <ul class='deathRayMenu' ng-show='menuState.show'>
-                <li ng-click='stun()'>Stun</li>
+                <li class="menu-disabled-{{isDisabled}}" ng-click='stun()'>Stun</li>
                 <li ng-click='disintegrate()'>Disintegrate</li>
                 <li ng-click='erase()'>Erase from history</li>
             </ul>
             <div>Action executed: {{actionResult}}</div>
         </div>
 
+        <h4>Errors and Warnings simulator</h4>
+        <div ng-controller="HeaderController">
+            <div ng-class="{error: isError, warning: isWarning}">{{messageText}}</div><br/>
+            <button ng-click="showError()">Simulate Error</button>
+            <button ng-click="showWarning()">Simulate Warning</button>
+            <button ng-click="reset()">Reset</button>
+        </div>
+        
+        <h4>Restaurant Directory</h4>
+        <table ng-controller="RestaurantTableController">
+            <tr ng-repeat="restaurant in directory" ng-click="selectRestaurant($index)"
+                ng-class="{selected: $index==selectedRow}">
+                <td>{{restaurant.name}}</td>
+                <td>{{restaurant.cuisine}}</td>
+            </tr>
+        </table>
     </body>
 </html>
