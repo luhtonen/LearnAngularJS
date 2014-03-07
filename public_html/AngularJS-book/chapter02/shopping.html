@@ -11,16 +11,16 @@
     </head>
     <body>
         <h4>Shopping</h4>
-        <div ng-controller="CartController">
-            <div ng-repeat="item in items">
-                <span>{{item.title}}</span>
-                <input ng-model="item.quantity">
-                <span>{{item.price | currency}}</span>
-                <span>{{item.price * item.quantity | currency}}</span>
-            </div>
-            <div>Total: {{totalCart() | currency}}</div>
-            <div>Discount: {{bill.discount | currency}}</div>
-            <div>Subtotal: {{subtotal() | currency}}</div>
-        </div>
+        <table ng-controller="CartController">
+            <tr ng-repeat="item in items">
+                <td>{{item.title}}</td>
+                <td><input ng-model="item.quantity"></td>
+                <td>{{item.price | currency}}</td>
+                <td>{{item.price * item.quantity | currency}}</td>
+            </tr>
+            <tr><td>Total:</td><td colspan="3">{{bill.totalCart | currency}}</td></tr>
+            <tr><td>Discount:</td><td colspan="3">{{bill.discount | currency}}</td></tr>
+            <tr><td>Subtotal:</td><td colspan="3">{{bill.subtotal | currency}}</td></tr>
+        </table>
     </body>
 </html>

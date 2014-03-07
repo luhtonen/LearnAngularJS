@@ -9,21 +9,16 @@ shoppingAppModule.controller('CartController', function($scope) {
         {title: 'Pebbles', quantity: 5, price: 6.95}
     ];
     
-    $scope.totalCart = function() {
+    var calculateTotals = function() {
         var total = 0;
         for (var i = 0, len = $scope.items.length; i < len; i++) {
             total = total + $scope.items[i].price * $scope.items[i].quantity;
         }
-        return total;
+        $scope.bill.totalCart = total;
+        $scope.bill.discount = 
+        $scope.bill.discount = total > 100 ? 10 : 0;
+        $scope.bill.subtotal = total - $scope.bill.discount;
     };
     
-    $scope.subtotal = function() {
-        return $scope.totalCart() - $scope.bill.discount;
-    };
-    
-    function calculateDiscount(newValue, oldValue, scope) {
-        $scope.bill.discount = newValue > 100 ? 10 : 0;
-    }
-    
-    $scope.$watch($scope.totalCart, calculateDiscount);
+    $scope.$watch('items', calculateTotals, true);
 });
