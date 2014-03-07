@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="shoppingApp">
+    <head>
+        <title>Shopping App</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" type="text/css" href="../../lib/css/bootstrap.css" />
+        <link rel='stylesheet' type="text/css" href='css/chapter02.css'/>
+        <script type="text/javascript" src="../../lib/js/angular.js"></script>
+        <script type='text/javascript' src="js/shopping.js"></script>
+    </head>
+    <body>
+        <h4>Shopping</h4>
+        <div ng-controller="CartController">
+            <div ng-repeat="item in items">
+                <span>{{item.title}}</span>
+                <input ng-model="item.quantity">
+                <span>{{item.price | currency}}</span>
+                <span>{{item.price * item.quantity | currency}}</span>
+            </div>
+            <div>Total: {{totalCart() | currency}}</div>
+            <div>Discount: {{bill.discount | currency}}</div>
+            <div>Subtotal: {{subtotal() | currency}}</div>
+        </div>
+    </body>
+</html>
