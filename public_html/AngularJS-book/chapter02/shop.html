@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="ShoppingModule">
+    <head>
+        <title>Shop!</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" type="text/css" href="../../lib/css/bootstrap.css" />
+        <link rel='stylesheet' type="text/css" href='css/chapter02.css'/>
+        <script type="text/javascript" src="../../lib/js/angular.js"></script>
+        <script type='text/javascript' src="js/shop.js"></script>
+    </head>
+    <body ng-controller="ShoppingController">
+        <h1>Shop!</h1>
+        <table>
+            <tr ng-repeat="item in items">
+                <td>{{item.title}}</td>
+                <td>{{item.description}}</td>
+                <td>{{item.price | currency}}</td>
+            </tr>
+        </table>
+    </body>
+</html>
