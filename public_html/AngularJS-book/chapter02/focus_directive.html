@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang='en' ng-app='focusApp'>
+    <head>
+        <title>Focus Directives</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" type="text/css" href="../../lib/css/bootstrap.css" />
+        <link rel='stylesheet' type="text/css" href='css/chapter02.css'/>
+        <script type="text/javascript" src="../../lib/js/angular.js"></script>
+        <script type="text/javascript" src="js/focusDirective.js"></script>
+    </head>
+    <body ng-controller="FocusController">
+        <button ng-click="clickUnfocused()"> Not focused
+        </button>
+        <button ngbk-focus ng-click="clickFocused()">
+            I'm very focused!
+        </button>
+        <div>{{message.text}}</div>
+    </body>
+</html>
