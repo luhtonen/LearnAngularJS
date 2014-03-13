@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="myFormApp">
+    <head>
+        <title>Form validation</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" type="text/css" href="../../lib/css/bootstrap.css" />
+        <link rel='stylesheet' type="text/css" href='css/chapter02.css'/>
+        <script type="text/javascript" src="../../lib/js/angular.js"></script>
+        <script type="text/javascript" src="js/myform.js"></script>
+    </head>
+    <body>
+        <h1>Sign Up</h1>
+        <form name="addUserForm" ng-controller="AddUserController">
+            <div ng-show="message">{{message}}</div>
+            <table>
+                <tr>
+                    <td>First name:</td>
+                    <td><input ng-model="user.first" required="true"></td>
+                </tr>
+                <tr>
+                    <td>Last name:</td>
+                    <td><input ng-model="user.last" required="true"></td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td><input type="email" ng-model="user.email" required="true"></td>
+                </tr>
+                <tr>
+                    <td>Age:</td>
+                    <td><input type="number" ng-model="user.age" ng-maxlength="3" ngminlength="1"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button ng-click="addUser()" ng-disabled="!addUserForm.$valid">Submit</button></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
